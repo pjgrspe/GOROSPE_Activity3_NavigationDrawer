@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group>
+        <item
+            android:id="@+id/nav_quotes_day"
+            android:title="Quotes of the day"
+            android:icon="@drawable/ic_home"
+            />
+        <item
+            android:id="@+id/nav_love_quotes"
+            android:title="Love quotes"
+            android:icon="@drawable/ic_love_quotes"
+            />
+        <item
+            android:id="@+id/nav_virgil_abloh_quotes"
+            android:icon="@drawable/ic_virgil_quotes"
+            android:title="Virgil Abloh Quotes" />
+        <item
+            android:id="@+id/nav_basquiat_quotes"
+            android:icon="@drawable/ic_basquiat_quotes"
+            android:title="Basquiat Quotes" />
+        <item
+            android:id="@+id/nav_steve_jobs_quotes"
+            android:icon="@drawable/ic_steve_jobs_quotes"
+            android:title="Steve Jobs Quotes" />
+        <item
+            android:id="@+id/nav_fave_quotes"
+            android:title="Fave quotes"
+            android:icon="@drawable/ic_save"
+            />
+
+
+    </group>
+
+</menu>
