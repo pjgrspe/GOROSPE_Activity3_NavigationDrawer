@@ -31,15 +31,12 @@ class FaveQuotesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Retrieve and log the favorite quotes
         faveQuotes = SharedPreferenceManager.getStringSet(SharedPrefKeys.FAVEQUOTE.key, emptySet()).toMutableSet()
         Log.d("FaveQuotesFragment", "Retrieved quotes: $faveQuotes")
 
-        // Initialize the adapter with the retrieved quotes
         adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_multiple_choice, faveQuotes.toMutableList())
         binding.listViewFaveQuotes.adapter = adapter
 
-        // Set up the remove button click listener
         binding.btnRemoveFave.setOnClickListener {
             removeSelectedQuotes()
         }
@@ -57,16 +54,13 @@ class FaveQuotesFragment : Fragment() {
             }
         }
 
-        // Remove selected quotes and update SharedPreferences
         faveQuotes.removeAll(quotesToRemove)
         SharedPreferenceManager.putStringSet(SharedPrefKeys.FAVEQUOTE.key, faveQuotes)
 
-        // Update the adapter with the new set of quotes
         adapter.clear()
         adapter.addAll(faveQuotes.toMutableList())
         adapter.notifyDataSetChanged()
 
-        // Log the updated quotes
         Log.d("FaveQuotesFragment", "Updated quotes: $faveQuotes")
     }
 
